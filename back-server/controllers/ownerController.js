@@ -4,6 +4,10 @@ import Booking from "../models/booking.js";
 import User from "../models/user.js";
 import imagekit from "../configs/imagekit.js";
 import { checkAvailability } from "./bookingController.js";
+import multer from 'multer';
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 // api to change to owner
 export const changeRoletoOwner =async (req,res)=>{
     try{

@@ -1,6 +1,7 @@
 import express from "express";
 import multer from "multer";
-const upload = multer({ dest: "uploads/" });
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 import { protect } from "../middleware/auth.js";
 import { changeRoletoOwner,addCar, getOwnerCars, toggleCarAvailablitiy, deleteCar,getDashboardData, updateUserImage } from "../controllers/ownerController.js";
